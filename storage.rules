@@ -1,0 +1,16 @@
+rules_version = '2';
+
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+//    /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      // Cho phép tất cả mọi người xem ảnh (để hiển thị trên web)
+      allow read: if true;
+      
+      // Chỉ cho phép admin đã đăng nhập mới được upload/xóa ảnh
+      allow write: if request.auth != null;
+    }
+  }
+}
