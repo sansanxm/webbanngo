@@ -99,7 +99,7 @@ export default function HomePage() {
             {/* Top Section: Banner and Bulletin */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Banner / Welcome Section (Takes 2 columns) */}
-                <section className="relative rounded-3xl overflow-hidden shadow-2xl text-white flex flex-col justify-end items-center text-center group md:col-span-2 aspect-[16/10]">
+                <section className="relative rounded-2xl overflow-hidden shadow-2xl text-white flex flex-col justify-end items-center text-center group md:col-span-2 aspect-[16/10]">
                     {/* Slideshow Background */}
                     <div className="absolute inset-0 z-0">
                         <BannerSlideshow
@@ -123,7 +123,7 @@ export default function HomePage() {
                 {/* Bulletin Section (Takes 1 column) */}
                 <div className="md:col-span-1 aspect-[16/10] md:aspect-auto">
                     {loading ? (
-                        <div className="w-full h-full bg-gray-100 dark:bg-gray-800 rounded-3xl animate-pulse"></div>
+                        <div className="w-full h-full bg-gray-100 dark:bg-gray-800 rounded-2xl animate-pulse"></div>
                     ) : (
                         <SlideshowColumn
                             title="Thông Báo"
@@ -135,7 +135,7 @@ export default function HomePage() {
                             className="h-full"
                             interval={5000}
                             renderItem={(post) => (
-                                <Link href={`/bulletin/read?id=${post.id}`} className="block w-full h-full bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md hover:border-red-200 dark:hover:border-red-900/40 transition-all group group/link overflow-hidden flex flex-col pt-2 relative z-10 pb-4">
+                                <Link href={`/bulletin/read?id=${post.id}`} className="block w-full h-full bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md hover:border-red-200 dark:hover:border-red-900/40 transition-all group group/link overflow-hidden flex flex-col pt-2 relative z-10 pb-4">
                                     <div className="w-full h-3/5 relative overflow-hidden bg-red-50 dark:bg-red-900/10 flex items-center justify-center text-red-400 shrink-0">
                                         {post.imageUrl ? (
                                             <DriveImage src={post.imageUrl} alt={post.title} className="w-full h-full object-cover group-hover/link:scale-110 transition-transform duration-700" />
@@ -166,7 +166,7 @@ export default function HomePage() {
                 {loading ? (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 h-[500px]">
                         {[1, 2, 3].map((n) => (
-                            <div key={n} className="bg-gray-100 dark:bg-gray-800 rounded-3xl animate-pulse"></div>
+                            <div key={n} className="bg-gray-100 dark:bg-gray-800 rounded-2xl animate-pulse"></div>
                         ))}
                     </div>
                 ) : (
@@ -180,7 +180,7 @@ export default function HomePage() {
                             viewAllHref="/news"
                             themeColor="blue"
                             renderItem={(post) => (
-                                <Link href={`/news/${post.id}`} className="block bg-white dark:bg-gray-900 p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-blue-900/10 hover:border-blue-200 dark:hover:border-blue-900/40 transition-all group flex gap-4 h-28">
+                                <Link href={`/news/${post.id}`} className="block bg-white dark:bg-gray-900 p-3 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-blue-900/10 hover:border-blue-200 dark:hover:border-blue-900/40 transition-all group flex gap-4 h-28">
                                     <div className="w-24 h-full rounded-xl overflow-hidden shrink-0 bg-gray-100 dark:bg-gray-800">
                                         {post.imageUrl ? (
                                             <DriveImage src={post.imageUrl} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -211,7 +211,7 @@ export default function HomePage() {
                             viewAllHref="/documents"
                             themeColor="green"
                             renderItem={(doc) => (
-                                <Link href={`/documents?cat=${doc.category}`} className="block bg-white dark:bg-gray-900 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-green-900/10 hover:border-green-200 dark:hover:border-green-900/40 transition-all group">
+                                <Link href={`/documents?cat=${doc.category}`} className="block bg-white dark:bg-gray-900 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-green-900/10 hover:border-green-200 dark:hover:border-green-900/40 transition-all group">
                                     <div className="flex gap-3">
                                         <div className="w-10 h-10 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 flex items-center justify-center shrink-0 group-hover:bg-green-600 group-hover:text-white dark:group-hover:bg-green-500 transition-colors">
                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
@@ -241,7 +241,7 @@ export default function HomePage() {
                             viewAllHref="/resources"
                             themeColor="purple"
                             renderItem={(res) => (
-                                <Link href={`/resources?cat=${res.category}`} className="block bg-white dark:bg-gray-900 p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-purple-900/10 hover:border-purple-200 dark:hover:border-purple-900/40 transition-all group flex gap-4 h-24">
+                                <Link href={`/resources?cat=${res.category}`} className="block bg-white dark:bg-gray-900 p-3 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-purple-900/10 hover:border-purple-200 dark:hover:border-purple-900/40 transition-all group flex gap-4 h-24">
                                     <div className="w-20 h-full rounded-xl overflow-hidden shrink-0 bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-400">
                                         {res.thumbnail ? (
                                             <DriveImage src={res.thumbnail} alt={res.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />

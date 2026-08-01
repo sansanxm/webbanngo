@@ -82,7 +82,7 @@ export default function SlideshowColumn<T>({
     }, [items, interval]);
 
     return (
-        <div className={`flex flex-col rounded-3xl overflow-hidden shadow-lg border ${theme.border} bg-white relative group/col transition-all duration-300 hover:shadow-xl ${className || "h-[500px]"}`}>
+        <div className={`flex flex-col rounded-2xl overflow-hidden shadow-lg border ${theme.border} bg-white relative group/col transition-all duration-300 hover:shadow-xl ${className || "h-[500px]"}`}>
             {/* Header */}
             <div className={`${theme.headerBg} px-5 py-4 text-white flex items-center justify-between z-20 shadow-md`}>
                 <div className="flex items-center gap-2 font-black text-lg uppercase tracking-wide">
