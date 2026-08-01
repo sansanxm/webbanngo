@@ -20,25 +20,25 @@ export default function Header() {
 
     const getLinkClass = (path: string) => {
         const baseClass = "px-5 py-2 rounded-full text-[14px] font-bold transition-all duration-300 block";
-        const activeClass = "bg-white text-blue-700 shadow-md";
-        const inactiveClass = "hover:bg-white hover:text-blue-700";
+        const activeClass = "bg-yellow-400 text-red-950 shadow-md";
+        const inactiveClass = "hover:bg-red-900/60 hover:text-yellow-100";
         return `${baseClass} ${isActive(path) ? activeClass : inactiveClass}`;
     };
 
     const getMobileLinkClass = (path: string) => {
         const baseClass = "block px-4 py-2 rounded-lg font-bold transition-colors";
-        const activeClass = "bg-white text-blue-700";
-        const inactiveClass = "hover:bg-white/10";
+        const activeClass = "bg-yellow-400 text-red-950";
+        const inactiveClass = "hover:bg-red-900/60";
         return `${baseClass} ${isActive(path) ? activeClass : inactiveClass}`;
     };
 
     return (
-        <header style={{ fontFamily: 'var(--font-roboto-condensed)' }} className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500 text-white shadow-xl sticky top-0 z-50 border-b border-blue-400/30">
+        <header style={{ fontFamily: 'var(--font-roboto-condensed)' }} className="bg-red-800 text-white shadow-lg sticky top-0 z-50 border-b border-yellow-500/40">
             <div className="w-full px-4 md:px-8 py-3">
                 <div className="flex justify-between items-center relative gap-4">
                     {/* Logo & School Name */}
                     <Link href="/" className="group flex items-center gap-3 md:gap-4 flex-shrink-0">
-                        <div className="bg-white p-1 md:p-1.5 rounded-full shadow-lg group-hover:scale-105 transition-transform duration-300 ring-2 ring-blue-300/50 flex-shrink-0 relative w-10 h-10 md:w-12 md:h-12 overflow-hidden">
+                        <div className="bg-white p-1 md:p-1.5 rounded-full shadow-lg group-hover:scale-105 transition-transform duration-300 ring-2 ring-yellow-400/50 flex-shrink-0 relative w-10 h-10 md:w-12 md:h-12 overflow-hidden">
                             {/* School Icon / Logo Placeholder */}
                             <img
                                 src="/logo.png"
