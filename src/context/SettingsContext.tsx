@@ -29,13 +29,13 @@ interface SettingsContextType {
 const defaultSettings: SystemSettings = {
     bannerUrl: "",
     bannerImages: [],
-    schoolName: "Trường PTDTBT Tiểu Học Bản Ngò",
-    principalName: "Cô Nông Thị Lượng",
-    vicePrincipalName: "Cô Phạm Thị Ngân Thuỷ",
+    schoolName: "Trường PTDTBT TH&THCS Bản Ngò",
+    principalName: "Ông Nguyễn Thanh Long",
+    vicePrincipalName: "Bà Nông Thị Lượng và Bà Hoàng Thị Ngân",
     principalMessage: "Chào mừng các em học sinh thân yêu đến với ngôi nhà thứ hai của chúng ta. Nơi đây, các em sẽ được học tập, vui chơi và trưởng thành mỗi ngày.",
     email: "c1bngo.xinman@hagiang.edu.vn",
     phone: "097.1986.343",
-    address: "Thôn Táo Thượng, xã Pà Vầy Sủ, tỉnh Tuyên Quang",
+    address: "Thôn Bản Ngò, xã Pà Vầy Sủ, tỉnh Tuyên Quang",
 };
 
 const SettingsContext = createContext<SettingsContextType>({

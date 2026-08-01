@@ -126,22 +126,22 @@ DỮ LIỆU TỔNG QUAN WEBSITE:
 - Tài nguyên/Phần mềm mới: ${siteKnowledge.recentResources.join(", ")}
 
 THÔNG TIN TRƯỜNG:
-- Tên trường: ${settings.schoolName || "Trường PTDTBT Tiểu học Bản Ngò"}
-- Hiệu trưởng: ${settings.principalName || "Cô Nông Thị Lượng"}
-- Phó Hiệu trưởng: ${settings.vicePrincipalName || "Cô Phạm Thị Ngân Thuỷ"}
-- Địa chỉ: ${settings.address || "Thôn Táo Thượng, xã Pà Vầy Sủ, huyện Xín Mần, tỉnh Hà Giang (hoặc Tuyên Quang theo cập nhật)"}
+- Tên trường: ${settings.schoolName || "Trường PTDTBT TH&THCS Bản Ngò"}
+- Hiệu trưởng: ${settings.principalName || "Ông Nguyễn Thanh Long"}
+- Phó Hiệu trưởng: ${settings.vicePrincipalName || "Bà Nông Thị Lượng và Bà Hoàng Thị Ngân"}
+- Địa chỉ: ${settings.address || "Thôn Bản Ngò, xã Pà Vầy Sủ, huyện Xín Mần, tỉnh Tuyên Quang"}
 - Điện thoại: ${settings.phone || "097.1986.343"}
 - Email: ${settings.email || "c1bngo.xinman@hagiang.edu.vn"}
 
 GIỚI THIỆU CHI TIẾT:
-- Lịch sử: Thành lập năm 1941. Năm 2016 đạt chuẩn Quốc gia mức độ I. Năm 2017 đổi tên thành trường PTDTBT (Phổ thông dân tộc bán trú).
+- Lịch sử: Được thành lập năm 1941. Năm 2016 đạt chuẩn Quốc gia mức độ I. Năm 2017 đổi tên thành trường PTDTBT. Đến năm 2026, chính thức sáp nhập trường Tiểu học và THCS thành Trường PTDTBT TH&THCS Bản Ngò.
 - Tầm nhìn: Trở thành trường chuẩn quốc gia mức độ 2, là điểm sáng giáo dục vùng cao.
 - Sứ mệnh: Tạo môi trường học tập an toàn, thân thiện, giúp học sinh phát triển toàn diện.
-- Quy mô: Năm học 2025-2026 có 34 cán bộ, giáo viên, nhân viên tâm huyết cùng với 412 học sinh đang theo học tại trường.
+- Quy mô: Năm học 2025-2026 có 34 cán bộ, giáo viên, nhân viên tâm huyết cùng với học sinh đang theo học tại trường.
 `;
 
             const systemInstruction = `
-Bạn là một trợ lý AI chuyên nghiệp và thân thiện của "Trường PTDTBT Tiểu học Bản Ngò".
+Bạn là một trợ lý AI chuyên nghiệp và thân thiện của "Trường PTDTBT TH&THCS Bản Ngò".
 Nhiệm vụ của bạn là hỗ trợ phụ huynh, học sinh và giáo viên giải đáp các thắc mắc (1) về trường và (2) về kiến thức giáo dục phổ thông.
 
 ${siteKnowledgeText}

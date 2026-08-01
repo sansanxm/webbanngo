@@ -48,10 +48,10 @@ export default function Header() {
                         </div>
                         <div className="flex flex-col min-w-0">
                             <span className="text-sm md:text-xl font-bold tracking-tight text-yellow-300 drop-shadow-md truncate hidden lg:block uppercase">
-                                {settings.schoolName || "TRƯỜNG PTDTBT TIỂU HỌC BẢN NGÒ"}
+                                {settings.schoolName || "TRƯỜNG PTDTBT TH&THCS BẢN NGÒ"}
                             </span>
                             <span className="hidden lg:block text-xs text-white/90 font-medium tracking-wider uppercase">
-                                {settings.address || "THÔN TÁO THƯỢNG, XÃ PÀ VẦY SỦ, TUYÊN QUANG"}
+                                {settings.address || "THÔN BẢN NGÒ, XÃ PÀ VẦY SỦ, TỈNH TUYÊN QUANG"}
                             </span>
                             <span className="text-sm font-bold tracking-tight text-yellow-300 drop-shadow-md truncate lg:hidden">
                                 {settings.schoolName ? settings.schoolName.substring(0, 20) + "..." : "Trường Bản Ngò"}

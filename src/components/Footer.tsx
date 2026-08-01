@@ -47,14 +47,14 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-12">
                     {/* Column 1: School Info */}
                     <div className="flex-1 max-w-xl">
-                        <h3 className="text-xl md:text-2xl font-bold mb-4 text-blue-400 uppercase tracking-wider">{settings.schoolName || "Trường PTDTBT Tiểu Học Bản Ngò"}</h3>
+                        <h3 className="text-xl md:text-2xl font-bold mb-4 text-blue-400 uppercase tracking-wider">{settings.schoolName || "Trường PTDTBT TH&THCS Bản Ngò"}</h3>
                         <p className="text-gray-300 mb-6 leading-relaxed text-lg">
                             Nơi nuôi dưỡng tâm hồn, trí tuệ và ước mơ cho các em học sinh vùng cao.
                             Chúng tôi tự hào mang đến môi trường học tập thân thiện và chất lượng.
                         </p>
                         <div className="flex items-center gap-3 text-gray-400 mb-2">
                             <svg className="w-5 h-5 flex-shrink-0 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                            <span className="text-base">{settings.address || "Thôn Táo Thượng, xã Pà Vầy Sủ, tỉnh Tuyên Quang"}</span>
+                            <span className="text-base">{settings.address || "Thôn Bản Ngò, xã Pà Vầy Sủ, tỉnh Tuyên Quang"}</span>
                         </div>
                         <div className="flex items-center gap-3 text-gray-400 mb-2">
                             <svg className="w-5 h-5 flex-shrink-0 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
@@ -88,7 +88,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} {settings.schoolName || "Trường PTDTBT Tiểu học Bản Ngò"}</p>
+                    <p>&copy; {new Date().getFullYear()} {settings.schoolName || "Trường PTDTBT TH&THCS Bản Ngò"}</p>
 
                     <p className="mt-2 text-xs text-gray-600">Lượt truy cập: {visits.toLocaleString()}</p>
                 </div>

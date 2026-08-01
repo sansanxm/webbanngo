@@ -10,7 +10,7 @@ export default function AboutPage() {
             <PageHeader
                 title="Về"
                 highlight="Chúng Tôi"
-                description="Trường PTDTBT Tiểu Học Bản Ngò"
+                description="Trường PTDTBT TH&THCS Bản Ngò"
             />
 
             <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
@@ -22,7 +22,7 @@ export default function AboutPage() {
                         Thông Tin Chung
                     </h2>
                     <p className="mb-6 leading-relaxed">
-                        Chào mừng quý phụ huynh và các em học sinh đến với website chính thức của <strong>Trường PTDTBT Tiểu học Bản Ngò</strong>.
+                        Chào mừng quý phụ huynh và các em học sinh đến với website chính thức của <strong>Trường PTDTBT TH&THCS Bản Ngò</strong>.
                         Tọa lạc tại vùng cao Tuyên Quang, chúng tôi tự hào là ngôi nhà thứ hai của các em học sinh dân tộc, nơi không chỉ dạy chữ mà còn nuôi dưỡng tâm hồn và nghị lực.
                     </p>
                     <p className="mb-10 leading-relaxed bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500 italic text-blue-900">
@@ -68,7 +68,7 @@ export default function AboutPage() {
                                 <strong>Năm 2016:</strong> Nhà trường vinh dự được công nhận là trường Tiểu học đạt <strong>Chuẩn Quốc gia Mức độ I</strong>. Đây là dấu mốc quan trọng khẳng định chất lượng giáo dục của nhà trường.
                             </li>
                             <li>
-                                <strong>Năm 2017:</strong> Nhà trường chính thức được đổi tên thành <strong>Trường PTDTBT Tiểu học Bản Ngò</strong>, đánh dấu bước phát triển mới trong mô hình trường bán trú, giúp các em học sinh ở xa có điều kiện học tập tốt hơn.
+                                <strong>Năm 2017:</strong> Nhà trường chính thức được đổi tên thành <strong>Trường PTDTBT Tiểu học Bản Ngò</strong>, đánh dấu bước phát triển mới trong mô hình trường bán trú. Đến năm 2026, nhà trường chính thức sáp nhập với trường THCS Bản Ngò để thành lập <strong>Trường PTDTBT TH&THCS Bản Ngò</strong>.
                             </li>
                         </ul>
                     </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                                 <div>
                                     <p className="text-xs text-blue-500 uppercase tracking-widest font-bold mb-1">Hiệu Trưởng</p>
                                     <h4 className="text-xl md:text-2xl font-bold text-blue-900 group-hover:text-blue-700 transition-colors uppercase">
-                                        {settings.principalName || "Cô Nông Thị Lượng"}
+                                        {settings.principalName || "Ông Nguyễn Thanh Long"}
                                     </h4>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ export default function AboutPage() {
                                 <div>
                                     <p className="text-xs text-indigo-500 uppercase tracking-widest font-bold mb-1">Phó Hiệu Trưởng</p>
                                     <h4 className="text-xl md:text-2xl font-bold text-blue-900 group-hover:text-indigo-700 transition-colors uppercase">
-                                        {settings.vicePrincipalName || "Cô Phạm Thị Ngân Thuỷ"}
+                                        {settings.vicePrincipalName || "Bà Nông Thị Lượng và Bà Hoàng Thị Ngân"}
                                     </h4>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@ export default function AboutPage() {
                     <ul className="space-y-4 text-gray-700 bg-gray-50 rounded-xl p-8">
                         <li className="flex items-start">
                             <strong className="min-w-[100px] text-gray-900">Địa chỉ:</strong>
-                            <span>{settings.address || "Thôn Táo Thượng, xã Pà Vầy Sủ, huyện Xín Mần, tỉnh Tuyên Quang"}</span>
+                            <span>{settings.address || "Thôn Bản Ngò, xã Pà Vầy Sủ, huyện Xín Mần, tỉnh Tuyên Quang"}</span>
                         </li>
                         <li className="flex items-start">
                             <strong className="min-w-[100px] text-gray-900">Email:</strong>
