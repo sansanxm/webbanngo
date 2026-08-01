@@ -28,10 +28,10 @@ const notoSans = Noto_Sans({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | TH Bản Ngò",
-    default: "TRƯỜNG PTDTBT TIỂU HỌC BẢN NGÒ",
+    template: "%s | TH&THCS Bản Ngò",
+    default: "TRƯỜNG PTDTBT TH&THCS BẢN NGÒ",
   },
-  description: "Website tin tức và hoạt động của Trường PTDTBT TH Bản Ngò, xã Pà Vầy Sủ, tỉnh Tuyên Quang",
+  description: "Website tin tức và hoạt động của Trường PTDTBT TH&THCS Bản Ngò, xã Pà Vầy Sủ, tỉnh Tuyên Quang",
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";
