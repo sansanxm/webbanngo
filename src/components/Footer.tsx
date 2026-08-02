@@ -41,9 +41,9 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <footer className="bg-gray-900 text-white mt-16 pt-16 pb-8 border-t border-gray-800">
             <NotificationSubscribe />
-            <div className="max-w-6xl mx-auto px-4 py-12">
+            <div className="max-w-6xl mx-auto px-4 pt-4 pb-12">
                 <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-12">
                     {/* Column 1: School Info */}
                     <div className="flex-1 max-w-xl">
