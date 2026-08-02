@@ -215,18 +215,20 @@ function ResourcesContent() {
 
                                     {/* New Tab Button specifically for Apps */}
                                     {res.category === "Phần mềm - Ứng dụng" && res.link && (
-                                        <button
+                                        <a
+                                            href={res.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             onClick={(e) => {
                                                 e.stopPropagation();
-                                                window.open(res.link, '_blank');
                                             }}
-                                            className="absolute top-6 right-6 z-30 bg-white/95 backdrop-blur-md text-purple-600 p-3 rounded-2xl shadow-xl hover:bg-purple-600 hover:text-white transition-all transform hover:scale-110 border border-purple-50 group/tab"
+                                            className="absolute top-6 right-6 z-30 bg-white/95 backdrop-blur-md text-purple-600 p-3 rounded-2xl shadow-xl hover:bg-purple-600 hover:text-white transition-all transform hover:scale-110 border border-purple-50 group/tab flex items-center justify-center"
                                             title="Mở trong tab mới"
                                         >
                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 6H6a2 2 0 00-2-2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                             </svg>
-                                        </button>
+                                        </a>
                                     )}
                                 </div>
 
