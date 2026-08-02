@@ -82,7 +82,7 @@ export default function AnimatedColumn<T>({
     const durationCount = items.length > 0 ? Math.max(20, items.length * 5) : 20;
 
     return (
-        <div className={`flex flex-col rounded-2xl overflow-hidden shadow-lg border ${theme.border} bg-white relative group/col transition-all duration-300 hover:shadow-xl ${className || "h-[500px]"}`}>
+        <div className={`flex flex-col rounded-2xl overflow-hidden shadow-lg border ${theme.border} bg-white relative group/col transition-all duration-300 hover:shadow-xl ${className || "h-[600px]"}`}>
             {/* Custom CSS for infinite vertical marquee */}
             <style>{`
                 @keyframes marqueeVertical {

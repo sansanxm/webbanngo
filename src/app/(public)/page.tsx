@@ -164,7 +164,7 @@ export default function HomePage() {
             {/* 3-Column Content Layout */}
             <section className="mt-8">
                 {loading ? (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 h-[500px]">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 h-[600px]">
                         {[1, 2, 3].map((n) => (
                             <div key={n} className="bg-gray-100 dark:bg-gray-800 rounded-2xl animate-pulse"></div>
                         ))}
