@@ -89,7 +89,7 @@ export default function Footer() {
 
                 <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
                     <p>&copy; {new Date().getFullYear()} {settings.schoolName || "Trường PTDTBT TH&THCS Bản Ngò"}</p>
-                    <p className="mt-1 text-sm text-gray-500">Thiết kế và phát triển bởi Xiao System</p>
+                    <p className="mt-1 text-sm text-gray-500">Thiết kế và phát triển bởi <strong>Xiao System</strong></p>
 
                     <p className="mt-2 text-xs text-gray-600">Lượt truy cập: {visits.toLocaleString()}</p>
                 </div>
