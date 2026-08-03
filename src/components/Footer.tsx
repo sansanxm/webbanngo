@@ -48,6 +48,7 @@ export default function Footer() {
                     {/* Column 1: School Info */}
                     <div className="flex-1 max-w-xl">
                         <h3 className="text-xl md:text-2xl font-bold mb-4 text-blue-400 uppercase tracking-wider">{settings.schoolName || "Trường PTDTBT TH&THCS Bản Ngò"}</h3>
+                        <p className="text-xs text-gray-400 mb-4 italic">Thiết kế và phát triển bởi Xiao System</p>
                         <p className="text-gray-300 mb-6 leading-relaxed text-lg">
                             Nơi nuôi dưỡng tâm hồn, trí tuệ và ước mơ cho các em học sinh vùng cao.
                             Chúng tôi tự hào mang đến môi trường học tập thân thiện và chất lượng.
