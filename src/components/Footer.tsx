@@ -92,9 +92,7 @@ export default function Footer() {
                     <p className="mt-1 text-[11px] text-gray-600">Lượt truy cập: {visits.toLocaleString()}</p>
                 </div>
             </div>
-        </footer>truy cập: {visits.toLocaleString()}</p>
-                </div>
-            </div>
-        </footer >
+        </footer>
     );
 }
+
