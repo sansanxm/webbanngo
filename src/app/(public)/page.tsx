@@ -127,7 +127,7 @@ export default function HomePage() {
                         <div className="w-full h-full bg-gray-100 dark:bg-gray-800 rounded-2xl animate-pulse"></div>
                     ) : (
                         <SlideshowColumn
-                            title="Thông Báo"
+                            title="Thông báo"
                             icon={<svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" /></svg>}
                             items={bulletins}
                             emptyMessage="Chưa có thông báo mới"
@@ -174,7 +174,7 @@ export default function HomePage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Column 1: News */}
                         <AnimatedColumn
-                            title="Tin Tức"
+                            title="Tin tức"
                             icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>}
                             items={posts}
                             emptyMessage="Chưa có tin tức mới"
@@ -205,7 +205,7 @@ export default function HomePage() {
 
                         {/* Column 2: Documents */}
                         <AnimatedColumn
-                            title="Văn Bản"
+                            title="Văn bản"
                             icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>}
                             items={documents}
                             emptyMessage="Chưa có văn bản công khai"
@@ -235,9 +235,10 @@ export default function HomePage() {
 
                         {/* Column 3: Resources */}
                         <AnimatedColumn
-                            title="Tài Nguyên"
+                            title="Tài nguyên"
                             icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>}
                             items={resources}
+
                             emptyMessage="Chưa có tài nguyên"
                             viewAllHref="/resources"
                             themeColor="purple"

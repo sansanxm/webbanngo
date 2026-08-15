@@ -38,10 +38,10 @@ export default function SearchPage() {
         <div className="max-w-5xl mx-auto py-6 px-4">
             <div className="text-center mb-6">
                 <span className="bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Cổng Thông Tin Học Sinh
+                    Cổng thông tin học sinh
                 </span>
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-2 mb-3 uppercase">
-                    Hệ Thống Tra Cứu Trực Tuyến
+                    Hệ thống tra cứu trực tuyến
                 </h1>
                 <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm">
                     Tra cứu điểm số, thời khóa biểu học tập và lịch thi kiểm tra của học sinh Trường PTDTBT TH&THCS Bản Ngò.
@@ -59,7 +59,7 @@ export default function SearchPage() {
                                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                         }`}
                     >
-                        📊 Tra Cứu Điểm Số
+                        📊 Tra cứu điểm số
                     </button>
                     <button
                         onClick={() => setActiveTab("timetable")}
@@ -69,7 +69,7 @@ export default function SearchPage() {
                                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                         }`}
                     >
-                        📚 Thời Khóa Biểu
+                        📚 Thời khóa biểu
                     </button>
                     <button
                         onClick={() => setActiveTab("exams")}
@@ -79,7 +79,7 @@ export default function SearchPage() {
                                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                         }`}
                     >
-                        📝 Lịch Thi & Phòng Thi
+                        📝 Lịch thi & phòng thi
                     </button>
                 </div>
             </div>
@@ -108,9 +108,9 @@ export default function SearchPage() {
             {activeTab === "timetable" && (
                 <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-800">
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">📅 Thời Khóa Biểu Học Tập</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">📅 Thời khóa biểu học tập</h3>
                         <div className="flex items-center gap-2">
-                            <label className="text-xs font-bold text-gray-500">Chọn Lớp:</label>
+                            <label className="text-xs font-bold text-gray-500">Chọn lớp:</label>
                             <select
                                 value={selectedGrade}
                                 onChange={(e) => setSelectedGrade(e.target.value)}
@@ -128,8 +128,8 @@ export default function SearchPage() {
                             <thead>
                                 <tr className="bg-red-900 text-white text-xs uppercase tracking-wider">
                                     <th className="p-3.5 rounded-tl-xl">Ngày</th>
-                                    <th className="p-3.5">Buổi Sáng (7h30 - 11h15)</th>
-                                    <th className="p-3.5 rounded-tr-xl">Buổi Chiều (14h00 - 16h30)</th>
+                                    <th className="p-3.5">Buổi sáng (7h30 - 11h15)</th>
+                                    <th className="p-3.5 rounded-tr-xl">Buổi chiều (14h00 - 16h30)</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-100 dark:divide-gray-800 text-sm">
@@ -149,11 +149,11 @@ export default function SearchPage() {
             {/* TAB 3: Lịch thi & Phòng thi */}
             {activeTab === "exams" && (
                 <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-800">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">📝 Lịch Thi & Sơ Đồ Phòng Thi Học Kỳ</h3>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">📝 Lịch thi & sơ đồ phòng thi học kỳ</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="bg-blue-50 dark:bg-blue-950/30 p-5 rounded-2xl border border-blue-100 dark:border-blue-900/40">
                             <span className="bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Kế hoạch sắp tới</span>
-                            <h4 className="font-bold text-gray-900 dark:text-white text-lg mt-2 mb-1">Thi Khảo Sát Chất Lượng Học Kỳ I</h4>
+                            <h4 className="font-bold text-gray-900 dark:text-white text-lg mt-2 mb-1">Thi khảo sát chất lượng học kỳ I</h4>
                             <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">Thời gian: Từ ngày 20/12 đến ngày 25/12</p>
                             <ul className="space-y-1.5 text-xs text-gray-700 dark:text-gray-300">
                                 <li>• <strong>Khối 6, 7, 8, 9:</strong> Thi tập trung tại các phòng thi số 01 - 08.</li>
@@ -163,7 +163,7 @@ export default function SearchPage() {
 
                         <div className="bg-amber-50 dark:bg-amber-950/30 p-5 rounded-2xl border border-amber-100 dark:border-amber-900/40">
                             <span className="bg-amber-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Lưu ý học sinh</span>
-                            <h4 className="font-bold text-gray-900 dark:text-white text-lg mt-2 mb-1">Nội Quy Phòng Thi</h4>
+                            <h4 className="font-bold text-gray-900 dark:text-white text-lg mt-2 mb-1">Nội quy phòng thi</h4>
                             <ul className="space-y-1.5 text-xs text-gray-700 dark:text-gray-300">
                                 <li>1. Có mặt tại phòng thi trước giờ làm bài 15 phút.</li>
                                 <li>2. Mang đầy đủ dụng cụ học tập (bút, thước, máy tính bỏ túi).</li>
@@ -173,6 +173,7 @@ export default function SearchPage() {
                     </div>
                 </div>
             )}
+
 
             <div className="mt-8 text-center text-xs text-gray-500">
                 <p>* Dữ liệu tra cứu được cập nhật trực tiếp từ hệ thống quản lý của Nhà trường.</p>
