@@ -67,7 +67,7 @@ export default function NotificationSubscribe() {
     if (permission === "granted" && !subscribed) return null; // Don't show if already granted (unless just subscribed to show success)
 
     return (
-        <div className="fixed bottom-20 left-6 z-40">
+        <div className="fixed bottom-6 left-6 z-40">
             <AnimatePresence>
                 {/* Subscribe Button (Show if default permission) */}
                 {permission === "default" && (
