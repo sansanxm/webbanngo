@@ -46,13 +46,13 @@ export default function FeedbackModal() {
             {/* Floating Trigger Button */}
             <button
                 onClick={() => setIsOpen(true)}
-                className="fixed bottom-[204px] right-6 z-40 bg-red-800 hover:bg-red-900 text-white p-3 md:px-4 md:py-3 rounded-full shadow-2xl flex items-center gap-2 font-bold text-xs md:text-sm border-2 border-yellow-400 group transition-all duration-300 hover:scale-105"
+                className="fixed bottom-6 left-6 z-40 bg-red-800 hover:bg-red-900 text-white p-3 md:px-4 md:py-3 rounded-full shadow-2xl flex items-center gap-2 font-bold text-xs md:text-sm border-2 border-yellow-400 group transition-all duration-300 hover:scale-105"
                 title="Gửi thư góp ý tới BGH Trường"
             >
                 <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="hidden md:inline pr-0.5">Hộp Thư Góp Ý</span>
+                <span className="pr-0.5">Hộp Thư Góp Ý</span>
             </button>
 
             {/* Modal Dialog */}
