@@ -54,7 +54,7 @@ export default function WeeklySchedule() {
                         Cập nhật hàng tuần
                     </div>
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                        📅 Lịch Làm Việc & Học Tập Tuần
+                        📅 Lịch làm việc & học tập tuần
                     </h2>
                 </div>
 
@@ -68,7 +68,7 @@ export default function WeeklySchedule() {
                                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                         }`}
                     >
-                        📋 Lịch Công Tác
+                        📋 Lịch công tác
                     </button>
                     <button
                         onClick={() => setSelectedTab("duty")}
@@ -78,7 +78,7 @@ export default function WeeklySchedule() {
                                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                         }`}
                     >
-                        🛡️ Lịch Trực Tuần
+                        🛡️ Lịch trực tuần
                     </button>
                     <button
                         onClick={() => setSelectedTab("exam")}
@@ -88,7 +88,7 @@ export default function WeeklySchedule() {
                                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                         }`}
                     >
-                        📝 Lịch Thi / Kiểm Tra
+                        📝 Lịch thi / kiểm tra
                     </button>
                 </div>
             </div>

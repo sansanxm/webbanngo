@@ -117,7 +117,7 @@ export default function AdminSchedulesPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div>
-                                <label className="block text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">📋 Lịch Công Tác</label>
+                                <label className="block text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">📋 Lịch công tác</label>
                                 <textarea
                                     rows={2}
                                     value={day.workSchedule}
@@ -126,7 +126,7 @@ export default function AdminSchedulesPage() {
                                 />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">🛡️ Lịch Trực Tuần</label>
+                                <label className="block text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">🛡️ Lịch trực tuần</label>
                                 <textarea
                                     rows={2}
                                     value={day.dutySchedule}
@@ -135,7 +135,7 @@ export default function AdminSchedulesPage() {
                                 />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">📝 Lịch Thi / Kiểm Tra</label>
+                                <label className="block text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">📝 Lịch thi / kiểm tra</label>
                                 <textarea
                                     rows={2}
                                     value={day.examSchedule}
