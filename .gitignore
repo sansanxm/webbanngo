@@ -47,5 +47,8 @@ next-env.d.ts
 thbanngopvs-b3d6d77c2762.json
 *.json.local
 *.json.development
+# firebase CLI cache
+.firebase/
 
-
+# temp assets
+public/.logo.png-*
