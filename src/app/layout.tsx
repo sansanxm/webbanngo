@@ -32,6 +32,12 @@ export const metadata: Metadata = {
     default: "TRƯỜNG PTDTBT TH&THCS BẢN NGÒ",
   },
   description: "Website tin tức và hoạt động của Trường PTDTBT TH&THCS Bản Ngò, xã Pà Vầy Sủ, tỉnh Tuyên Quang",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "TH&THCS Bản Ngò",
+  },
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";

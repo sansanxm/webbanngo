@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PhoneButton from "@/components/PhoneButton";
 import AIAssistant from "@/components/AIAssistant";
 import ZaloButton from "@/components/ZaloButton";
+import FeedbackModal from "@/components/FeedbackModal";
 
 export default function PublicLayout({
     children,
@@ -19,6 +20,7 @@ export default function PublicLayout({
             <AIAssistant />
             <PhoneButton />
             <ZaloButton />
+            <FeedbackModal />
         </div>
     );
 }

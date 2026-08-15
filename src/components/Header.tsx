@@ -33,7 +33,7 @@ export default function Header() {
     };
 
     return (
-        <header style={{ fontFamily: 'var(--font-roboto-condensed)' }} className="bg-red-800 text-white shadow-lg sticky top-0 z-50 border-b border-yellow-500/40">
+        <header style={{ fontFamily: 'var(--font-roboto-condensed)' }} className="bg-red-900/95 backdrop-blur-md text-white shadow-xl sticky top-0 z-50 border-b border-yellow-500/40 transition-all duration-300">
             <div className="w-full px-4 md:px-8 py-3">
                 <div className="flex justify-between items-center relative gap-4">
                     {/* Logo & School Name */}

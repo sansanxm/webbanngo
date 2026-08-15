@@ -79,6 +79,16 @@ export default function AdminLayout({
                 </Link>
             </li>
             <li>
+                <Link href="/admin/schedules" className={`block p-3 rounded-lg transition-colors ${pathname.startsWith('/admin/schedules') ? 'bg-blue-100 text-blue-700 font-bold' : 'hover:bg-gray-100 text-gray-700'}`}>
+                    📅 Lịch Công Tác
+                </Link>
+            </li>
+            <li>
+                <Link href="/admin/feedbacks" className={`block p-3 rounded-lg transition-colors ${pathname.startsWith('/admin/feedbacks') ? 'bg-blue-100 text-blue-700 font-bold' : 'hover:bg-gray-100 text-gray-700'}`}>
+                    ✉️ Hộp Thư Góp Ý
+                </Link>
+            </li>
+            <li>
                 <Link href="/admin/profile" className={`block p-3 rounded-lg transition-colors ${pathname === '/admin/profile' ? 'bg-blue-100 text-blue-700 font-bold' : 'hover:bg-gray-100 text-gray-700'}`}>
                     👤 Hồ Sơ
                 </Link>

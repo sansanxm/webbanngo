@@ -10,6 +10,7 @@ import BannerSlideshow from "@/components/BannerSlideshow";
 import SchoolStats from "@/components/SchoolStats";
 import AnimatedColumn from "@/components/AnimatedColumn";
 import SlideshowColumn from "@/components/SlideshowColumn";
+import WeeklySchedule from "@/components/WeeklySchedule";
 import { useSettings } from "@/context/SettingsContext"; // Import context
 
 interface Post {
@@ -273,6 +274,9 @@ export default function HomePage() {
             <div className="mt-16">
                 <SchoolStats />
             </div>
-        </div >
+
+            {/* Weekly Schedule Section */}
+            <WeeklySchedule />
+        </div>
     );
 }
