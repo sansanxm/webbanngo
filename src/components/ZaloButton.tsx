@@ -16,7 +16,7 @@ export default function ZaloButton() {
             <motion.div
                 initial={{ opacity: 0, scale: 0.5, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                className="fixed bottom-[160px] right-6 z-50 pointer-events-none md:pointer-events-auto"
+                className="fixed bottom-[144px] right-6 z-50 pointer-events-none md:pointer-events-auto"
             >
                 <button
                     onClick={() => setIsOpen(true)}
