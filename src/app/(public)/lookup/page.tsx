@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 export default function SearchPage() {
     const [activeTab, setActiveTab] = useState<"grades" | "timetable" | "exams">("grades");
     const [loading, setLoading] = useState(true);
     const [selectedGrade, setSelectedGrade] = useState("Lớp 1A1");
+    const [currentTimetable, setCurrentTimetable] = useState<{ day: string; morning: string; afternoon: string }[]>([]);
 
     // URL from user
     const googleScriptUrl = "https://script.google.com/macros/s/AKfycbyF88vLI8m9WvbIxhf_Wtz8aCpTi3IzUr8Y1neoCO6sPAG8NGXL1BVlv9bw2oL7QH6wuA/exec";
@@ -35,26 +38,28 @@ export default function SearchPage() {
         { day: "Thứ 6", morning: "Lịch sử & Địa lý, GDCD, Âm nhạc, Mỹ thuật, SHL", afternoon: "Sinh hoạt Đội" },
     ];
 
-    const TIMETABLES: Record<string, { day: string; morning: string; afternoon: string }[]> = {
-        "Lớp 1A1": PRIMARY_TIMETABLE,
-        "Lớp 1A2": PRIMARY_TIMETABLE,
-        "Lớp 1A3": PRIMARY_TIMETABLE,
-        "Lớp 1A4": PRIMARY_TIMETABLE,
-        "Lớp 2A1": PRIMARY_TIMETABLE,
-        "Lớp 2A2": PRIMARY_TIMETABLE,
-        "Lớp 2A3": PRIMARY_TIMETABLE,
-        "Lớp 3A1": PRIMARY_TIMETABLE,
-        "Lớp 3A2": PRIMARY_TIMETABLE,
-        "Lớp 4A1": PRIMARY_TIMETABLE,
-        "Lớp 4A2": PRIMARY_TIMETABLE,
-        "Lớp 5A1": PRIMARY_TIMETABLE,
-        "Lớp 5A2": PRIMARY_TIMETABLE,
-        "Lớp 6A": SECONDARY_TIMETABLE,
-        "Lớp 7A": SECONDARY_TIMETABLE,
-        "Lớp 8A": SECONDARY_TIMETABLE,
-        "Lớp 9A": SECONDARY_TIMETABLE,
-        "Lớp 9B": SECONDARY_TIMETABLE,
-    };
+    useEffect(() => {
+        const fetchTimetable = async () => {
+            const isSecondary = ["Lớp 6A", "Lớp 7A", "Lớp 8A", "Lớp 9A", "Lớp 9B"].includes(selectedGrade);
+            const defaultRows = isSecondary ? SECONDARY_TIMETABLE : PRIMARY_TIMETABLE;
+
+            try {
+                const docRef = doc(db, "timetables", selectedGrade);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists() && docSnap.data().rows) {
+                    setCurrentTimetable(docSnap.data().rows);
+                } else {
+                    setCurrentTimetable(defaultRows);
+                }
+            } catch (err) {
+                console.error("Error fetching class timetable:", err);
+                setCurrentTimetable(defaultRows);
+            }
+        };
+
+        fetchTimetable();
+    }, [selectedGrade]);
+
 
 
     return (
@@ -158,7 +163,7 @@ export default function SearchPage() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-100 dark:divide-gray-800 text-sm">
-                                {(TIMETABLES[selectedGrade] || TIMETABLES["Lớp 9A"]).map((row, idx) => (
+                                {currentTimetable.map((row, idx) => (
                                     <tr key={idx} className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                                         <td className="p-3.5 font-bold text-red-700 dark:text-red-400 w-24">{row.day}</td>
                                         <td className="p-3.5 text-gray-800 dark:text-gray-200">{row.morning}</td>

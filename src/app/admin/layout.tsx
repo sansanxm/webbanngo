@@ -84,6 +84,11 @@ export default function AdminLayout({
                 </Link>
             </li>
             <li>
+                <Link href="/admin/timetables" className={`block p-3 rounded-lg transition-colors ${pathname.startsWith('/admin/timetables') ? 'bg-blue-100 text-blue-700 font-bold' : 'hover:bg-gray-100 text-gray-700'}`}>
+                    📚 Thời Khóa Biểu
+                </Link>
+            </li>
+            <li>
                 <Link href="/admin/feedbacks" className={`block p-3 rounded-lg transition-colors ${pathname.startsWith('/admin/feedbacks') ? 'bg-blue-100 text-blue-700 font-bold' : 'hover:bg-gray-100 text-gray-700'}`}>
                     ✉️ Hộp Thư Góp Ý
                 </Link>
