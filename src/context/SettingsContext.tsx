@@ -1,10 +1,12 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { doc, onSnapshot } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { onSnapshot } from "firebase/firestore";
+import { DEFAULT_SCHOOL_ID, getSchoolIdFromHost } from "@/lib/school";
+import { getTenantDocRef } from "@/lib/firebase-tenant";
 
 interface SystemSettings {
+    schoolId?: string;
     bannerUrl?: string;
     bannerImages?: string[]; // Array of image URLs for slideshow
     schoolName?: string;
@@ -23,10 +25,12 @@ interface SystemSettings {
 
 interface SettingsContextType {
     settings: SystemSettings;
+    currentSchoolId: string;
     loading: boolean;
 }
 
 const defaultSettings: SystemSettings = {
+    schoolId: DEFAULT_SCHOOL_ID,
     bannerUrl: "",
     bannerImages: [],
     schoolName: "Trường PTDTBT TH&THCS Bản Ngò",
@@ -40,26 +44,34 @@ const defaultSettings: SystemSettings = {
 
 const SettingsContext = createContext<SettingsContextType>({
     settings: defaultSettings,
+    currentSchoolId: DEFAULT_SCHOOL_ID,
     loading: true,
 });
 
 export function SettingsProvider({ children }: { children: React.ReactNode }) {
     const [settings, setSettings] = useState<SystemSettings>(defaultSettings);
+    const [currentSchoolId, setCurrentSchoolId] = useState<string>(DEFAULT_SCHOOL_ID);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Subscribe to real-time updates
-        const unsubscribe = onSnapshot(doc(db, "settings", "general"), (doc) => {
-            if (doc.exists()) {
-                setSettings({ ...defaultSettings, ...doc.data() });
+        if (typeof window === "undefined") return;
+
+        const hostname = window.location.hostname;
+        const searchParams = new URLSearchParams(window.location.search);
+        const schoolId = getSchoolIdFromHost(hostname, searchParams);
+        setCurrentSchoolId(schoolId);
+
+        // Subscribe to tenant-specific settings
+        const settingsDocRef = getTenantDocRef(schoolId, "settings", "general");
+        const unsubscribe = onSnapshot(settingsDocRef, (docSnap) => {
+            if (docSnap.exists()) {
+                setSettings({ ...defaultSettings, schoolId, ...docSnap.data() });
             } else {
-                // Initialize default if not exists? Or just keep default state.
-                // We could creating it here, but maybe Admin page handles creation.
-                console.log("No settings found, using defaults");
+                setSettings({ ...defaultSettings, schoolId });
             }
             setLoading(false);
         }, (error) => {
-            console.error("Error fetching settings:", error);
+            console.error("Error subscribing to settings:", error);
             setLoading(false);
         });
 
@@ -67,7 +79,7 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
     }, []);
 
     return (
-        <SettingsContext.Provider value={{ settings, loading }}>
+        <SettingsContext.Provider value={{ settings, currentSchoolId, loading }}>
             {children}
         </SettingsContext.Provider>
     );
