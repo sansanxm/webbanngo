@@ -5,34 +5,57 @@ import { useState } from "react";
 export default function SearchPage() {
     const [activeTab, setActiveTab] = useState<"grades" | "timetable" | "exams">("grades");
     const [loading, setLoading] = useState(true);
-    const [selectedGrade, setSelectedGrade] = useState("Lớp 9A");
+    const [selectedGrade, setSelectedGrade] = useState("Lớp 1A1");
 
     // URL from user
     const googleScriptUrl = "https://script.google.com/macros/s/AKfycbyF88vLI8m9WvbIxhf_Wtz8aCpTi3IzUr8Y1neoCO6sPAG8NGXL1BVlv9bw2oL7QH6wuA/exec";
 
+    const CLASS_LIST = [
+        "Lớp 1A1", "Lớp 1A2", "Lớp 1A3", "Lớp 1A4",
+        "Lớp 2A1", "Lớp 2A2", "Lớp 2A3",
+        "Lớp 3A1", "Lớp 3A2",
+        "Lớp 4A1", "Lớp 4A2",
+        "Lớp 5A1", "Lớp 5A2",
+        "Lớp 6A", "Lớp 7A", "Lớp 8A", "Lớp 9A", "Lớp 9B"
+    ];
+
+    const PRIMARY_TIMETABLE = [
+        { day: "Thứ 2", morning: "Chào cờ, Tiếng Việt, Tiếng Việt, Toán, Đạo đức", afternoon: "Hoạt động trải nghiệm, Tự học" },
+        { day: "Thứ 3", morning: "Toán, Tiếng Việt, Tiếng Việt, Tự nhiên & Xã hội, Âm nhạc", afternoon: "Mỹ thuật, Thể dục" },
+        { day: "Thứ 4", morning: "Tiếng Việt, Tiếng Việt, Toán, Tiếng Anh, Giáo dục thể chất", afternoon: "Ôn tập Tiếng Việt" },
+        { day: "Thứ 5", morning: "Toán, Tiếng Việt, Tiếng Việt, Tự nhiên & Xã hội, Thủ công", afternoon: "Ôn tập Toán" },
+        { day: "Thứ 6", morning: "Tiếng Việt, Toán, Tiếng Anh, Tin học & Công nghệ, SHL", afternoon: "Sinh hoạt Sao / Đội" },
+    ];
+
+    const SECONDARY_TIMETABLE = [
+        { day: "Thứ 2", morning: "Chào cờ, Toán, Ngữ văn, Tiếng Anh, Khoa học tự nhiên", afternoon: "Thể dục, Sinh học" },
+        { day: "Thứ 3", morning: "Toán, Hóa học, Ngữ văn, Lịch sử & Địa lý, GDCD", afternoon: "Tin học, Công nghệ" },
+        { day: "Thứ 4", morning: "Tiếng Anh, Toán, Ngữ văn, GDCD, Khoa học tự nhiên", afternoon: "Phụ đạo Toán" },
+        { day: "Thứ 5", morning: "Vật lý, Hóa học, Toán, Ngữ văn, Tiếng Anh", afternoon: "Phụ đạo Ngữ văn" },
+        { day: "Thứ 6", morning: "Lịch sử & Địa lý, GDCD, Âm nhạc, Mỹ thuật, SHL", afternoon: "Sinh hoạt Đội" },
+    ];
+
     const TIMETABLES: Record<string, { day: string; morning: string; afternoon: string }[]> = {
-        "Lớp 9A": [
-            { day: "Thứ 2", morning: "Chào cờ, Toán, Ngữ Văn, Tiếng Anh, Lý", afternoon: "Thể dục, Sinh học" },
-            { day: "Thứ 3", morning: "Toán, Hóa học, Ngữ Văn, Lịch sử, Địa lý", afternoon: "Tin học, Công nghệ" },
-            { day: "Thứ 4", morning: "Tiếng Anh, Toán, Ngữ Văn, GDCD, Sinh", afternoon: "Phụ đạo Toán" },
-            { day: "Thứ 5", morning: "Vật lý, Hóa học, Toán, Ngữ Văn, Tiếng Anh", afternoon: "Phụ đạo Ngữ Văn" },
-            { day: "Thứ 6", morning: "Lịch sử, Địa lý, GDCD, Âm nhạc, Mỹ thuật", afternoon: "Sinh hoạt Lớp" },
-        ],
-        "Lớp 8A": [
-            { day: "Thứ 2", morning: "Chào cờ, Ngữ Văn, Toán, Tiếng Anh, Sinh", afternoon: "Thể dục" },
-            { day: "Thứ 3", morning: "Toán, Vật lý, Ngữ Văn, Hóa học, Lịch sử", afternoon: "Tin học" },
-            { day: "Thứ 4", morning: "Ngữ Văn, Toán, Tiếng Anh, Địa lý, GDCD", afternoon: "Học thêm Toán" },
-            { day: "Thứ 5", morning: "Hóa học, Sinh học, Ngữ Văn, Toán, Công nghệ", afternoon: "Học thêm Văn" },
-            { day: "Thứ 6", morning: "Tiếng Anh, Âm nhạc, Mỹ thuật, Thể dục, SHL", afternoon: "Hoạt động Đội" },
-        ],
-        "Lớp 7A": [
-            { day: "Thứ 2", morning: "Chào cờ, Toán, Ngữ Văn, Tiếng Anh, Khoa học tự nhiên", afternoon: "Ngoại khóa" },
-            { day: "Thứ 3", morning: "Ngữ Văn, Toán, Lịch sử & Địa lý, GDCD, Công nghệ", afternoon: "Tin học" },
-            { day: "Thứ 4", morning: "Khoa học tự nhiên, Tiếng Anh, Toán, Ngữ Văn, Thể dục", afternoon: "Ôn tập" },
-            { day: "Thứ 5", morning: "Toán, Ngữ Văn, Tiếng Anh, Âm nhạc, Mỹ thuật", afternoon: "Đọc sách thư viện" },
-            { day: "Thứ 6", morning: "Lịch sử & Địa lý, Khoa học tự nhiên, GDCD, SHL", afternoon: "Sinh hoạt lớp" },
-        ],
+        "Lớp 1A1": PRIMARY_TIMETABLE,
+        "Lớp 1A2": PRIMARY_TIMETABLE,
+        "Lớp 1A3": PRIMARY_TIMETABLE,
+        "Lớp 1A4": PRIMARY_TIMETABLE,
+        "Lớp 2A1": PRIMARY_TIMETABLE,
+        "Lớp 2A2": PRIMARY_TIMETABLE,
+        "Lớp 2A3": PRIMARY_TIMETABLE,
+        "Lớp 3A1": PRIMARY_TIMETABLE,
+        "Lớp 3A2": PRIMARY_TIMETABLE,
+        "Lớp 4A1": PRIMARY_TIMETABLE,
+        "Lớp 4A2": PRIMARY_TIMETABLE,
+        "Lớp 5A1": PRIMARY_TIMETABLE,
+        "Lớp 5A2": PRIMARY_TIMETABLE,
+        "Lớp 6A": SECONDARY_TIMETABLE,
+        "Lớp 7A": SECONDARY_TIMETABLE,
+        "Lớp 8A": SECONDARY_TIMETABLE,
+        "Lớp 9A": SECONDARY_TIMETABLE,
+        "Lớp 9B": SECONDARY_TIMETABLE,
     };
+
 
     return (
         <div className="max-w-5xl mx-auto py-6 px-4">
@@ -116,9 +139,11 @@ export default function SearchPage() {
                                 onChange={(e) => setSelectedGrade(e.target.value)}
                                 className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-3 py-1.5 text-sm font-bold"
                             >
-                                <option value="Lớp 9A">Lớp 9A</option>
-                                <option value="Lớp 8A">Lớp 8A</option>
-                                <option value="Lớp 7A">Lớp 7A</option>
+                                {CLASS_LIST.map((className) => (
+                                    <option key={className} value={className}>
+                                        {className}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                     </div>
