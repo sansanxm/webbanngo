@@ -103,11 +103,6 @@ export default function AdminLayout({
                     ⚙️ Cấu Hình
                 </Link>
             </li>
-            <li>
-                <Link href="/super-admin" className="block p-3 text-purple-700 bg-purple-50 hover:bg-purple-100 font-bold rounded-lg transition-colors">
-                    👑 Super Admin Portal
-                </Link>
-            </li>
             <li className="mt-8 border-t pt-4">
                 <Link href="/" className="block p-3 text-blue-600 hover:text-blue-800 font-medium flex items-center">
                     &larr; Về Trang Chủ
